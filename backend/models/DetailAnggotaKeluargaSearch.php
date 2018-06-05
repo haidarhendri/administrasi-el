@@ -18,7 +18,8 @@ class DetailAnggotaKeluargaSearch extends DetailAnggotaKeluarga
     public function rules()
     {
         return [
-            [['nik', 'no_kk', 'nama', 'jenis_kelamin', 'agama', 'pekerjaan'], 'safe'],
+            [['nik', 'no_kk', 'nama', 'jenis_kelamin', 'tempat_lahir', 'tanggal_lahir', 'golongan_darah', 'agama', 'status_nikah', 'status_keluarga', 'pendidikan', 'pekerjaan', 'nama_ayah', 'nama_ibu', 'warga_negara'], 'safe'],
+            [['rt', 'rw'], 'integer'],
         ];
     }
 
@@ -54,12 +55,26 @@ class DetailAnggotaKeluargaSearch extends DetailAnggotaKeluarga
             return $dataProvider;
         }
 
+        $query->andFilterWhere([
+            'tanggal_lahir' => $this->tanggal_lahir,
+            'rt' => $this->rt,
+            'rw' => $this->rw,
+        ]);
+
         $query->andFilterWhere(['like', 'nik', $this->nik])
             ->andFilterWhere(['like', 'no_kk', $this->no_kk])
             ->andFilterWhere(['like', 'nama', $this->nama])
             ->andFilterWhere(['like', 'jenis_kelamin', $this->jenis_kelamin])
+            ->andFilterWhere(['like', 'tempat_lahir', $this->tempat_lahir])
+            ->andFilterWhere(['like', 'golongan_darah', $this->golongan_darah])
             ->andFilterWhere(['like', 'agama', $this->agama])
-            ->andFilterWhere(['like', 'pekerjaan', $this->pekerjaan]);
+            ->andFilterWhere(['like', 'status_nikah', $this->status_nikah])
+            ->andFilterWhere(['like', 'status_keluarga', $this->status_keluarga])
+            ->andFilterWhere(['like', 'pendidikan', $this->pendidikan])
+            ->andFilterWhere(['like', 'pekerjaan', $this->pekerjaan])
+            ->andFilterWhere(['like', 'nama_ayah', $this->nama_ayah])
+            ->andFilterWhere(['like', 'nama_ibu', $this->nama_ibu])
+            ->andFilterWhere(['like', 'warga_negara', $this->warga_negara]);
 
         return $dataProvider;
     }

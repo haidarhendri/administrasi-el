@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2018 at 09:03 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Jun 05, 2018 at 05:18 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `yii2advanced`
+-- Database: `administrasi-el`
 --
 
 -- --------------------------------------------------------
@@ -32,17 +32,21 @@ CREATE TABLE `detail_anggota_keluarga` (
   `nik` varchar(25) NOT NULL,
   `no_kk` varchar(25) NOT NULL,
   `nama` varchar(25) NOT NULL,
-  `jenis_kelamin` char(10) NOT NULL,
-  `agama` char(10) NOT NULL,
-  `pekerjaan` varchar(25) NOT NULL
+  `jenis_kelamin` char(2) NOT NULL,
+  `tempat_lahir` varchar(25) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `golongan_darah` char(2) NOT NULL,
+  `agama` char(15) NOT NULL,
+  `status_nikah` varchar(25) NOT NULL,
+  `status_keluarga` varchar(25) NOT NULL,
+  `pendidikan` varchar(25) NOT NULL,
+  `pekerjaan` varchar(25) NOT NULL,
+  `nama_ayah` varchar(50) NOT NULL,
+  `nama_ibu` varchar(50) NOT NULL,
+  `rt` int(5) NOT NULL,
+  `rw` int(5) NOT NULL,
+  `warga_negara` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `detail_anggota_keluarga`
---
-
-INSERT INTO `detail_anggota_keluarga` (`nik`, `no_kk`, `nama`, `jenis_kelamin`, `agama`, `pekerjaan`) VALUES
-('15464315', '0221505132262', 'khadsaidsa', 'laki-laki', 'islam', 'petani_pekebun');
 
 -- --------------------------------------------------------
 
@@ -56,13 +60,6 @@ CREATE TABLE `event_kematian` (
   `sebab_meninggal` char(50) NOT NULL,
   `tanggal_kematian` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `event_kematian`
---
-
-INSERT INTO `event_kematian` (`NIK`, `tempat_meninggal`, `sebab_meninggal`, `tanggal_kematian`) VALUES
-('15464315', 'semarang', 'lupa makan', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -104,7 +101,7 @@ CREATE TABLE `event_mutasi_masuk` (
 
 CREATE TABLE `kabupaten` (
   `id_kabupaten` varchar(25) NOT NULL,
-  `id_provinsi` char(2) NOT NULL,
+  `id_provinsi` varchar(25) NOT NULL,
   `nama_kabupaten` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -636,7 +633,7 @@ INSERT INTO `kabupaten` (`id_kabupaten`, `id_provinsi`, `nama_kabupaten`) VALUES
 
 CREATE TABLE `kartu_keluarga` (
   `no_kk` varchar(25) NOT NULL,
-  `id_provinsi` char(2) NOT NULL,
+  `id_provinsi` varchar(25) NOT NULL,
   `id_kabupaten` varchar(25) NOT NULL,
   `id_kecamatan` varchar(25) NOT NULL,
   `id_kelurahan` varchar(25) NOT NULL,
@@ -652,8 +649,9 @@ CREATE TABLE `kartu_keluarga` (
 --
 
 INSERT INTO `kartu_keluarga` (`no_kk`, `id_provinsi`, `id_kabupaten`, `id_kecamatan`, `id_kelurahan`, `rt`, `rw`, `nama_kepala_keluarga`, `alamat`, `kode_pos`) VALUES
-('0221505132262', '11', '1173', '117301', '1173012011', '05', '10', 'Aditya Kharisma Wicaksana', 'Jalan melati 3', '13235'),
-('3310229023234', '12', '1211', '121110', '1211102004', '06', '22', 'Haidar Hendri Setyawan', 'Griya Sanggrahan Indah 3 C-11', '57161');
+('11212121212', '33', '3372', '337201', '3372011007', '12', '22', 'Setyawan', 'Jalan Honggowongso No.94', '57149'),
+('1313131313', '33', '3372', '337203', '3372031002', '06', '19', 'Haidar Hendri Setyawan', 'Kyai Mojo', '57191'),
+('14141414', '33', '3311', '331112', '3311122006', '06', '22', 'Hendri Setyawan', 'Griya Sanggrahan Indah 3 C-11', '57161');
 
 -- --------------------------------------------------------
 
@@ -90380,7 +90378,7 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 --
 
 CREATE TABLE `provinsi` (
-  `id_provinsi` char(2) NOT NULL,
+  `id_provinsi` varchar(25) NOT NULL,
   `nama_provinsi` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -90461,13 +90459,6 @@ CREATE TABLE `tagihan` (
   `nama_tagihan` varchar(20) NOT NULL,
   `iuran_per_bulan` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tagihan`
---
-
-INSERT INTO `tagihan` (`id_tagihan`, `nama_tagihan`, `iuran_per_bulan`) VALUES
-('1235135', 'Iuran Ronda', 10000);
 
 -- --------------------------------------------------------
 
@@ -90704,16 +90695,16 @@ ALTER TABLE `event_mutasi_masuk`
 -- Constraints for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
-  ADD CONSTRAINT `kabupaten_ibfk_1` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provinsi`);
+  ADD CONSTRAINT `235` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provinsi`);
 
 --
 -- Constraints for table `kartu_keluarga`
 --
 ALTER TABLE `kartu_keluarga`
+  ADD CONSTRAINT `444` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provinsi`),
   ADD CONSTRAINT `b123` FOREIGN KEY (`id_kelurahan`) REFERENCES `kelurahan` (`id_kelurahan`),
   ADD CONSTRAINT `cq123` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id_kecamatan`),
-  ADD CONSTRAINT `da123` FOREIGN KEY (`id_kabupaten`) REFERENCES `kabupaten` (`id_kabupaten`),
-  ADD CONSTRAINT `qq123` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provinsi`);
+  ADD CONSTRAINT `da123` FOREIGN KEY (`id_kabupaten`) REFERENCES `kabupaten` (`id_kabupaten`);
 
 --
 -- Constraints for table `kecamatan`

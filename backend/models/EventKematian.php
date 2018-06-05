@@ -45,7 +45,7 @@ class EventKematian extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'NIK' => 'Nik',
+            'NIK' => 'NIK',
             'tempat_meninggal' => 'Tempat Meninggal',
             'sebab_meninggal' => 'Sebab Meninggal',
             'tanggal_kematian' => 'Tanggal Kematian',

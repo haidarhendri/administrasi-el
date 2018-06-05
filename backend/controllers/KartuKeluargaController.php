@@ -268,23 +268,4 @@ class KartuKeluargaController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
-    public function actionKelurahanlist($q = null, $id = null) {
-    \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-    $out = ['results' => ['id_kelurahan' => '', 'text' => '']];
-    if (!is_null($q)) {
-        $query = new Query;
-        $query->select('id_kelurahan, nama_kelurahan AS text')
-            ->from('kelurahan')
-            ->where(['like', 'nama_kelurahan', $q])
-            ->limit(20);
-        $command = $query->createCommand();
-        $data = $command->queryAll();
-        $out['results'] = array_values($data);
-    }
-    elseif ($id > 0) {
-        $out['results'] = ['id_kelurahan' => $id, 'text' => Kelurahan::find($id)->name];
-    }
-    return $out;
-}
 }

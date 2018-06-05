@@ -43,7 +43,7 @@ class KartuKeluarga extends \yii\db\ActiveRecord
         return [
             [['no_kk', 'id_provinsi', 'id_kabupaten', 'id_kecamatan', 'id_kelurahan', 'rt', 'rw', 'nama_kepala_keluarga', 'alamat', 'kode_pos'], 'required'],
             [['no_kk', 'id_kabupaten', 'id_kecamatan', 'id_kelurahan', 'nama_kepala_keluarga'], 'string', 'max' => 25],
-            [['id_provinsi'], 'string', 'max' => 2],
+            [['id_provinsi'], 'string', 'max' => 25],
             [['rt', 'rw'], 'string', 'max' => 4],
             [['alamat'], 'string', 'max' => 50],
             [['kode_pos'], 'string', 'max' => 10],

@@ -24,15 +24,63 @@ return [
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'jenis_kelamin',
+        'attribute'=>'tempat_lahir',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'tanggal_lahir',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'agama',
     ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'status_nikah',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'pendidikan',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'pekerjaan',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'jenis_kelamin',
+    ],   
+    
     // [
         // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'pekerjaan',
+        // 'attribute'=>'golongan_darah',
+    // ],
+    
+    
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'status_keluarga',
+    // ],
+    
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'nama_ayah',
+    // ],
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'nama_ibu',
+    // ],
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'rt',
+    // ],
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'rw',
+    // ],
+    // [
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'warga_negara',
     // ],
     [
         'class' => 'kartik\grid\ActionColumn',

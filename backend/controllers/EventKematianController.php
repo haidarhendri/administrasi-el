@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use app\models\EventKematian;
 use app\models\EventKematianSearch;
+use app\models\Kabupaten;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -251,6 +252,25 @@ class EventKematianController extends Controller
             return $this->redirect(['index']);
         }
        
+    }
+
+    public function actionCityList($q = null) {
+    \Yii::$app->response->format = Response::FORMAT_JSON;
+    $out = ['results' => ['id' => '', 'text' => '']];
+
+    if (!is_null($q)) {
+        $query   = Kabupaten::find();
+        $query
+        ->select(['id_kabupaten as id', 'nama_kabupaten AS text'])
+        ->andWhere(['like', 'nama_kabupaten', $q])
+        ->limit(10);
+
+        $command = $query->createCommand();
+        $data = $command->queryAll();
+            $out['results'] = array_values($data);
+    }
+
+    return $out;
     }
 
     /**

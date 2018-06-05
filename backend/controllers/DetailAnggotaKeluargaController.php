@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
+use app\models\Kabupaten;
 
 /**
  * DetailAnggotaKeluargaController implements the CRUD actions for DetailAnggotaKeluarga model.
@@ -260,6 +261,26 @@ class DetailAnggotaKeluargaController extends Controller
      * @return DetailAnggotaKeluarga the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
+
+    public function actionCityList($q = null) {
+    \Yii::$app->response->format = Response::FORMAT_JSON;
+    $out = ['results' => ['id' => '', 'text' => '']];
+
+    if (!is_null($q)) {
+        $query   = Kabupaten::find();
+        $query
+        ->select(['id_kabupaten as id', 'nama_kabupaten AS text'])
+        ->andWhere(['like', 'nama_kabupaten', $q])
+        ->limit(10);
+
+        $command = $query->createCommand();
+        $data = $command->queryAll();
+            $out['results'] = array_values($data);
+    }
+
+    return $out;
+    }
+
     protected function findModel($id)
     {
         if (($model = DetailAnggotaKeluarga::findOne($id)) !== null) {
