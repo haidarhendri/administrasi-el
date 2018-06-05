@@ -41,7 +41,6 @@ class EventMutasiMasuk extends \yii\db\ActiveRecord
             [['rt_lama', 'rw_lama'], 'string', 'max' => 3],
             [['NIK'], 'unique'],
             [['id_kelurahan_lama'], 'exist', 'skipOnError' => true, 'targetClass' => Kelurahan::className(), 'targetAttribute' => ['id_kelurahan_lama' => 'id_kelurahan']],
-            [['NIK'], 'exist', 'skipOnError' => true, 'targetClass' => DetailAnggotaKeluarga::className(), 'targetAttribute' => ['NIK' => 'nik']],
         ];
     }
 
@@ -51,12 +50,12 @@ class EventMutasiMasuk extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'NIK' => 'Nik',
+            'NIK' => 'NIK',
             'jenis_mutasi' => 'Jenis Mutasi',
             'klasifikasi_mutasi' => 'Klasifikasi Mutasi',
-            'id_kelurahan_lama' => 'Id Kelurahan Lama',
-            'rt_lama' => 'Rt Lama',
-            'rw_lama' => 'Rw Lama',
+            'id_kelurahan_lama' => 'Kelurahan Lama',
+            'rt_lama' => 'RT Lama',
+            'rw_lama' => 'RW Lama',
             'tanggal_proses' => 'Tanggal Proses',
         ];
     }

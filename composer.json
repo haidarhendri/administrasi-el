@@ -22,7 +22,8 @@
         "kartik-v/yii2-widgets": "*",
         "dmstr/yii2-adminlte-asset": "^2.1",
         "ramosisw/yii2-material-dashboard": "dev-master",
-        "warrence/yii2-kartikgii": "dev-master"
+        "warrence/yii2-kartikgii": "dev-master",
+        "miloschuman/yii2-highcharts-widget": "^6.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -36,50 +36,50 @@
                         'label' => 'Kependudukan',
                         'icon' => 'user',
                         'url' => '#',
-                        'items' => [                    
+                        'items' => [
                             ['label' => 'Kartu Keluarga', 'icon' => 'circle-o', 'url' => ['/kartu-keluarga']],
                             ['label' => 'Data Penduduk', 'icon' => 'circle-o', 'url' => ['/detail-anggota-keluarga']],
                             // ['label' => 'Warga', 'icon' => 'circle-o', 'url' => ['/user-warga']],
-                        ], 
+                        ],
                     ],
                     // ['label' => 'Data Provinsi', 'icon' => 'location-arrow', 'url' => ['/data-provinsi']],
                     ['label' => 'Kematian', 'icon' => 'home', 'url' => ['/event-kematian']],
                     ['label' => 'Mutasi', 'icon' => 'address-card', 'url' => ['#'],
-                        'items' => [                    
+                        'items' => [
                             ['label' => 'Mutasi Masuk', 'icon' => 'circle-o', 'url' => ['/event-mutasi-masuk']],
                             ['label' => 'Mutasi Keluar', 'icon' => 'circle-o', 'url' => ['/event-mutasi-keluar']]
-                        ], 
+                        ],
                         ],
 
                     [
                         'label' => 'Surat Warga',
                         'icon' => 'envelope',
                         'url' => '#',
-                        'items' => [                    
+                        'items' => [
                             ['label' => 'Jenis Surat', 'icon' => 'circle-o', 'url' => ['/surat']],
                             ['label' => 'Surat Warga', 'icon' => 'circle-o', 'url' => ['/surat-warga']],
-                        ], 
+                        ],
                     ],
                     // [
                     //     'label' => 'Surat Keluar',
                     //     'icon' => 'envelope-open',
                     //     'url' => '#',
-                    //     'items' => [                    
+                    //     'items' => [
                     //         ['label' => 'Surat Keluar', 'icon' => 'circle-o', 'url' => ['/surat-keluar']],
                     //         ['label' => 'Surat Keluar Warga', 'icon' => 'circle-o', 'url' => ['/surat-keluar-warga']],
-                    //     ], 
+                    //     ],
                     // ],
                     [
                         'label' => 'Tagihan',
                         'icon' => 'money',
                         'url' => '#',
-                        'items' => [                    
+                        'items' => [
                             ['label' => 'Tagihan', 'icon' => 'circle-o', 'url' => ['/tagihan']],
                             ['label' => 'Tagihan Warga', 'icon' => 'circle-o', 'url' => ['/tagihan-warga']],
-                        ], 
+                        ],
                     ],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    // ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
+                    // ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
 
                     // ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     // [

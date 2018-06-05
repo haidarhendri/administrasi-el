@@ -18,7 +18,7 @@ $url = \yii\helpers\Url::to(['city-list']);
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nik')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nik')->textInput(['maxlength' => 16 ]) ?>
 
     <?= $form->field($model, 'no_kk')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(KartuKeluarga::find()->all(),'no_kk','no_kk'),
@@ -31,17 +31,21 @@ $url = \yii\helpers\Url::to(['city-list']);
     ]);
     ?>
 
-    <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nama')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'jenis_kelamin')->dropDownList(
-        [
+    <?= $form->field($model, 'jenis_kelamin')->widget(Select2::classname(), [
+        'data' => [
             'L' => 'Laki-Laki',
             'P' => 'Perempuan'
         ],
-        [
-            'prompt'=>'Pilih Jenis Kelamin'
-        ])
-        ?>
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih Jenis Kelamin',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
+    ?>
 
     <?= $form->field($model, 'tempat_lahir')->widget(Select2::classname(), [
         'initValueText' => '', // set the initial display text
@@ -67,25 +71,31 @@ $url = \yii\helpers\Url::to(['city-list']);
     <?= $form->field($model, 'tanggal_lahir')->widget(DatePicker::classname(), [
         'options' => ['placeholder' => 'Pilih Tanggal Lahir'],
         'pluginOptions' => [
-            'autoclose'=>true
+            'autoclose'=>true,
+            'todayHighlight' => true,
+            'format' => 'yyyy-mm-dd'
         ]
     ]);
     ?>
 
-    <?= $form->field($model, 'golongan_darah')->dropDownList(
-        [
+    <?= $form->field($model, 'golongan_darah')->widget(Select2::classname(), [
+        'data' => [
             'A' => 'A',
             'B' => 'B',
             'O' => 'O',
             'AB' => 'AB'
         ],
-        [
-            'prompt'=>'Pilih Golongan Darah'
-        ])
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih Golongan Darah',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
     ?>
 
-    <?= $form->field($model, 'agama')->dropDownList(
-        [
+    <?= $form->field($model, 'agama')->widget(Select2::classname(), [
+        'data' => [
             'Islam' => 'Islam',
             'Kristen' => 'Kristen',
             'Katolik' => 'Katolik',
@@ -93,45 +103,51 @@ $url = \yii\helpers\Url::to(['city-list']);
             'Budha' => 'Budha',
             'Kong Hu Cu' => 'Kong Hu Cu'
         ],
-        [
-            'prompt'=>'Pilih Agama'
-        ])
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih Agama',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
     ?>
 
-    <?= $form->field($model, 'status_nikah')->dropDownList(
-        [
+    <?= $form->field($model, 'status_nikah')->widget(Select2::classname(), [
+        'data' => [
             'Kawin' => 'Kawin',
             'Belum Kawin' => 'Belum Kawin',
             'Cerai Hidup' => 'Cerai Hidup',
             'Cerai Mati' => 'Cerai Mati'
         ],
-        [
-            'prompt'=>'Pilih Status Nikah'
-        ])
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih Status Nikah',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
     ?>
 
-    <?= $form->field($model, 'status_keluarga')->dropDownList(
-        [
+    <?= $form->field($model, 'status_keluarga')->widget(Select2::classname(), [
+        'data' => [
             'Kepala Keluarga' => 'Kepala Keluarga',
-            'Suami' => 'Suami',
             'Istri' => 'Istri',
             'Anak' => 'Anak',
-            'Menantu' => 'Menantu',
             'Cucu' => 'Cucu',
-            'Orangtua' => 'Orangtua',
-            'Mertua' => 'Mertua',
-            'Famili lain' => 'Famili lain',
-            'Pembantu' => 'Pembantu',
+            'Saudara lain' => 'Saudara lain',
             'Lainnya' => 'Lainnya'
-
         ],
-        [
-            'prompt'=>'Pilih Status Keluarga'
-        ])
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih Status Keluarga',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
     ?>
 
-    <?= $form->field($model, 'pendidikan')->dropDownList(
-        [
+    <?= $form->field($model, 'pendidikan')->widget(Select2::classname(), [
+        'data' => [
             'Tidak / Belum Sekolah' => 'Tidak / Belum Sekolah',
             'Belum Tamat SD / Sederajat' => 'Belum Tamat SD / Sederajat',
             'Tamat SD / Sederajat' => 'Tamat SD / Sederajat',
@@ -142,11 +158,14 @@ $url = \yii\helpers\Url::to(['city-list']);
             'Diploma IV / Strata I' => 'Diploma IV / Strata I',
             'Strata II' => 'Strata II',
             'Strata III' => 'Strata III'
-
         ],
-        [
-            'prompt'=>'Pilih Pendidikan Terakhir'
-        ])
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih Pendidikan',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
     ?>
 
     <?= $form->field($model, 'pekerjaan')->widget(Select2::classname(), [
@@ -249,26 +268,30 @@ $url = \yii\helpers\Url::to(['city-list']);
     ]);
     ?>
 
-    <?= $form->field($model, 'nama_ayah')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nama_ayah')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'nama_ibu')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nama_ibu')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'rt')->textInput() ?>
+    <?= $form->field($model, 'rt')->textInput(['maxlength' => 3]) ?>
 
-    <?= $form->field($model, 'rw')->textInput() ?>
+    <?= $form->field($model, 'rw')->textInput(['maxlength' => 3]) ?>
 
-    <?= $form->field($model, 'warga_negara')->dropDownList(
-        [
+    <?= $form->field($model, 'warga_negara')->widget(Select2::classname(), [
+        'data' => [
             'Indonesia' => 'Indoensia',
             'Asing' => 'Asing',
             'Lainnya' => 'Lainnya'
         ],
-        [
-            'prompt'=>'Pilih Warga Negara'
-        ])
+        'language' => 'id',
+        'options' => ['placeholder' => 'Pilih  Warga Negara',
+        ],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]);
     ?>
 
-  
+
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -276,5 +299,5 @@ $url = \yii\helpers\Url::to(['city-list']);
 	<?php } ?>
 
     <?php ActiveForm::end(); ?>
-    
+
 </div>

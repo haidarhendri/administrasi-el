@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
+use app\models\Kelurahan;
 
 /**
  * EventMutasiKeluarController implements the CRUD actions for EventMutasiKeluar model.
@@ -37,7 +38,7 @@ class EventMutasiKeluarController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {    
+    {
         $searchModel = new EventMutasiKeluarSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -54,7 +55,7 @@ class EventMutasiKeluarController extends Controller
      * @return mixed
      */
     public function actionView($id)
-    {   
+    {
         $request = Yii::$app->request;
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -65,7 +66,7 @@ class EventMutasiKeluarController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];    
+                ];
         }else{
             return $this->render('view', [
                 'model' => $this->findModel($id),
@@ -82,7 +83,7 @@ class EventMutasiKeluarController extends Controller
     public function actionCreate()
     {
         $request = Yii::$app->request;
-        $model = new EventMutasiKeluar();  
+        $model = new EventMutasiKeluar();
 
         if($request->isAjax){
             /*
@@ -97,8 +98,8 @@ class EventMutasiKeluarController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-        
-                ];         
+
+                ];
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
@@ -106,9 +107,9 @@ class EventMutasiKeluarController extends Controller
                     'content'=>'<span class="text-success">Create EventMutasiKeluar success</span>',
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
-        
-                ];         
-            }else{           
+
+                ];
+            }else{
                 return [
                     'title'=> "Create new EventMutasiKeluar",
                     'content'=>$this->renderAjax('create', [
@@ -116,8 +117,8 @@ class EventMutasiKeluarController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-        
-                ];         
+
+                ];
             }
         }else{
             /*
@@ -131,7 +132,7 @@ class EventMutasiKeluarController extends Controller
                 ]);
             }
         }
-       
+
     }
 
     /**
@@ -144,7 +145,7 @@ class EventMutasiKeluarController extends Controller
     public function actionUpdate($id)
     {
         $request = Yii::$app->request;
-        $model = $this->findModel($id);       
+        $model = $this->findModel($id);
 
         if($request->isAjax){
             /*
@@ -159,7 +160,7 @@ class EventMutasiKeluarController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];         
+                ];
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
@@ -169,7 +170,7 @@ class EventMutasiKeluarController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];    
+                ];
             }else{
                  return [
                     'title'=> "Update EventMutasiKeluar #".$id,
@@ -178,7 +179,7 @@ class EventMutasiKeluarController extends Controller
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];        
+                ];
             }
         }else{
             /*
@@ -230,7 +231,7 @@ class EventMutasiKeluarController extends Controller
      * @return mixed
      */
     public function actionBulkDelete()
-    {        
+    {
         $request = Yii::$app->request;
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
@@ -250,7 +251,26 @@ class EventMutasiKeluarController extends Controller
             */
             return $this->redirect(['index']);
         }
-       
+
+    }
+
+    public function actionCityList($q = null) {
+    \Yii::$app->response->format = Response::FORMAT_JSON;
+    $out = ['results' => ['id' => '', 'text' => '']];
+
+    if (!is_null($q)) {
+        $query   = Kelurahan::find();
+        $query
+        ->select(['id_kelurahan as id', 'nama_kelurahan AS text'])
+        ->andWhere(['like', 'nama_kelurahan', $q])
+        ->limit(10);
+
+        $command = $query->createCommand();
+        $data = $command->queryAll();
+            $out['results'] = array_values($data);
+    }
+
+    return $out;
     }
 
     /**

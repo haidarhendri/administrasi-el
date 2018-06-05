@@ -49,13 +49,13 @@ class EventMutasiKeluar extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'NIK' => 'Nik',
+            'NIK' => 'NIK',
             'jenis_mutasi' => 'Jenis Mutasi',
             'klasifikasi_mutasi' => 'Klasifikasi Mutasi',
             'tanggal_proses' => 'Tanggal Proses',
-            'id_kelurahan_baru' => 'Id Kelurahan Baru',
-            'rt_baru' => 'Rt Baru',
-            'rw_baru' => 'Rw Baru',
+            'id_kelurahan_baru' => 'Kelurahan Baru',
+            'rt_baru' => 'RT Baru',
+            'rw_baru' => 'RW Baru',
         ];
     }
 

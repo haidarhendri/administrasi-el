@@ -43,7 +43,7 @@ class Tagihan extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_tagihan' => 'Id Tagihan',
+            'id_tagihan' => 'ID Tagihan',
             'nama_tagihan' => 'Nama Tagihan',
             'iuran_per_bulan' => 'Iuran Per Bulan',
         ];

@@ -31,8 +31,7 @@ use app\models\Tagihan;
     <?= $form->field($model, 'id_tagihan')-> widget(Select2::classname(), [
         'data' => ArrayHelper::map(Tagihan::find()->all(),'id_tagihan','nama_tagihan'),
         'language' => 'id',
-        'options' => ['placeholder' => 'id_tagihan',
-        'onchange'=>''
+        'options' => ['placeholder' => 'Pilih Nama Tagihan',
             ],
         'pluginOptions' => [
             'allowClear' => true
@@ -43,7 +42,7 @@ use app\models\Tagihan;
 
     <?= $form->field($model, 'bulan_tunggakan')->textInput() ?>
 
-  
+
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -51,5 +50,5 @@ use app\models\Tagihan;
 	<?php } ?>
 
     <?php ActiveForm::end(); ?>
-    
+
 </div>

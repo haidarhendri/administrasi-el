@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\widgets\Select2;
+use kartik\date\DatePicker;
 use yii\helpers\ArrayHelper;
 use app\models\DetailAnggotaKeluarga;
 use app\models\Surat;
@@ -18,9 +19,8 @@ use app\models\Surat;
     <?= $form->field($model, 'id_surat')-> widget(Select2::classname(), [
         'data' => ArrayHelper::map(Surat::find()->all(),'id_surat','judul'),
         'language' => 'id',
-        'options' => ['placeholder' => 'id_surat',
-        'onchange'=>''
-            ],
+        'options' => ['placeholder' => 'Jenis Surat',
+        ],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -32,7 +32,6 @@ use app\models\Surat;
         'data' => ArrayHelper::map(DetailAnggotaKeluarga::find()->all(),'nik','nama'),
         'language' => 'id',
         'options' => ['placeholder' => 'NIK',
-        'onchange'=>''
             ],
         'pluginOptions' => [
             'allowClear' => true
@@ -43,9 +42,17 @@ use app\models\Surat;
 
     ?>
 
-    <?= $form->field($model, 'tanggal_proses')->textInput() ?>
+    <?= $form->field($model, 'tanggal_proses')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => 'Pilih Tanggal Proses'],
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'todayHighlight' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);
+    ?>
 
-  
+
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -53,5 +60,5 @@ use app\models\Surat;
 	<?php } ?>
 
     <?php ActiveForm::end(); ?>
-    
+
 </div>

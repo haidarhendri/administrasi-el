@@ -56,12 +56,14 @@ $url = \yii\helpers\Url::to(['city-list']);
    <?= $form->field($model, 'tanggal_kematian')->widget(DatePicker::classname(), [
         'options' => ['placeholder' => 'Pilih Tanggal Kematian'],
         'pluginOptions' => [
-            'autoclose'=>true
+            'autoclose'=>true,
+            'todayHighlight' => true,
+            'format' => 'yyyy-mm-dd'
         ]
     ]);
     ?>
 
-  
+
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -69,5 +71,5 @@ $url = \yii\helpers\Url::to(['city-list']);
 	<?php } ?>
 
     <?php ActiveForm::end(); ?>
-    
+
 </div>

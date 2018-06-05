@@ -17,7 +17,9 @@ use app\models\Kelurahan;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'no_kk')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'no_kk')->textInput(['maxlength' => 16]) ?>
+
+    <?= $form->field($model, 'nama_kepala_keluarga')->textInput(['maxlength' => 20]) ?>
 
     <?= $form->field($model, 'id_provinsi')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(Provinsi::find()->all(),'id_provinsi','nama_provinsi'),
@@ -79,17 +81,15 @@ use app\models\Kelurahan;
     ]);
     ?>
 
-    <?= $form->field($model, 'rt')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'rt')->textInput(['maxlength' => 3]) ?>
 
-    <?= $form->field($model, 'rw')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'nama_kepala_keluarga')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'rw')->textInput(['maxlength' => 3]) ?>
 
     <?= $form->field($model, 'alamat')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'kode_pos')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'kode_pos')->textInput(['maxlength' => 5]) ?>
 
-  
+
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -97,5 +97,5 @@ use app\models\Kelurahan;
 	<?php } ?>
 
     <?php ActiveForm::end(); ?>
-    
+
 </div>

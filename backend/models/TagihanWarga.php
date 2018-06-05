@@ -46,8 +46,8 @@ class TagihanWarga extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'NIK' => 'Nik',
-            'id_tagihan' => 'Id Tagihan',
+            'NIK' => 'NIK',
+            'id_tagihan' => 'Nama Tagihan',
             'bulan_tunggakan' => 'Bulan Tunggakan',
         ];
     }
