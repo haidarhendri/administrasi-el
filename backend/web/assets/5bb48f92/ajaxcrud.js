@@ -1,5 +1,5 @@
 /*!
- * Ajax Crud 
+ * Ajax Crud
  * =================================
  * Use for johnitvn/yii2-ajaxcrud extension
  * @author John Martin john.itvn@gmail.com
@@ -17,6 +17,7 @@ $(document).ready(function () {
 
     // Catch click event on all buttons that want to open a modal
     $(document).on('click', '[role="modal-remote"]', function (event) {
+        $.fn.modal.Constructor.prototype.enforceFocus = $.noop;
         event.preventDefault();
 
         // Open modal
