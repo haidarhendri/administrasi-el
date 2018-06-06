@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a9e5e3d04e1ffbd573c2cdd3ec56b01",
+    "content-hash": "a2e39548f7f76caee1a2f9118512e88b",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1531,7 +1531,7 @@
         },
         {
             "name": "kartik-v/yii2-mpdf",
-            "version": "v1.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-mpdf.git",
@@ -6040,7 +6040,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "ramosisw/yii2-material-dashboard": 20,
-        "warrence/yii2-kartikgii": 20
+        "warrence/yii2-kartikgii": 20,
+        "kartik-v/yii2-mpdf": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

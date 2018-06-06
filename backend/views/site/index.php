@@ -77,7 +77,7 @@ echo Highcharts::widget([
                     ],
                 ],
                 // 'center' => [100, 80],
-                // 'size' => 100,
+                'size' => 300,
                 'showInLegend' => true,
                 'dataLabels' => [
                     'enabled' => true,
