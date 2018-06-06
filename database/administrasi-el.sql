@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2018 at 05:18 AM
+-- Generation Time: Jun 06, 2018 at 06:39 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.0.30
 
@@ -47,6 +47,64 @@ CREATE TABLE `detail_anggota_keluarga` (
   `rw` int(5) NOT NULL,
   `warga_negara` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detail_anggota_keluarga`
+--
+
+INSERT INTO `detail_anggota_keluarga` (`nik`, `no_kk`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `golongan_darah`, `agama`, `status_nikah`, `status_keluarga`, `pendidikan`, `pekerjaan`, `nama_ayah`, `nama_ibu`, `rt`, `rw`, `warga_negara`) VALUES
+('1234567891011121', '1234567891011120', 'Setyawan', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana I', 'PNS', 'Rino', 'Risa', 12, 22, 'Indonesia'),
+('1234567891011122', '1234567891011120', 'Sinta', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana I', 'PNS', 'Toni', 'Anisa', 12, 22, 'Indonesia\r\n'),
+('1234567891011123', '1234567891011120', 'Ronaldo', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Programmer', 'Setyawan', 'Sinta', 12, 22, 'Indonesia\r\n'),
+('1234567891011124', '1234567891011120', 'Kinan', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Setyawan', 'Sinta', 12, 22, 'Indonesia\r\n'),
+('1234567891011125', '1234567891011120', 'Lala', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SD', 'Pelajar', 'Setyawan', 'Sinta', 12, 22, 'Indonesia\r\n'),
+('1243563435431335', '1234567891011120', 'HHS', 'L', '3372', '2018-06-04', 'A', 'Islam', 'Kawin', 'Saudara lain', 'Strata III', 'Pelajar / Mahasiswa', 'Haidar', 'Setywan', 3, 1, 'Indonesia'),
+('1321212313123201', '1321212313123200', 'Haidar Setyawan', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Karyawan Swasta', 'Idham', 'Fitria', 6, 22, 'Indonesia\r\n'),
+('1321212313123202', '1321212313123200', 'Mutia', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana III', 'Karyawan Swasta', 'Gusti', 'Utari', 6, 22, 'Indonesia\r\n'),
+('1321212313123203', '1321212313123200', 'Ilham', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana II', 'Karyawan Swasta', 'Haidar Setyawan', 'Mutia', 6, 22, 'Indonesia\r\n'),
+('1321212313123204', '1321212313123200', 'Haya', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Karyawan Swasta', 'Haidar Setyawan', 'Mutia', 6, 22, 'Indonesia\r\n'),
+('1321212313123205', '1321212313123200', 'Kusuma', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Haidar Setyawan', 'Mutia', 6, 22, 'Indonesia\r\n'),
+('1321321321321321', '1321321321321320', 'Haidar Hendri Setyawan', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana II', 'Dosen', 'Tono', 'Nur', 6, 19, 'Indonesia\r\n'),
+('1321321321321322', '1321321321321320', 'Tari', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana II', 'Dosen', 'Subekti', 'Lia', 6, 19, 'Indonesia\r\n'),
+('1321321321321323', '1321321321321320', 'Tiara', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Guru', 'Haidar Hendri Setyawan', 'Tari', 6, 19, 'Indonesia\r\n'),
+('1321321321321324', '1321321321321320', 'Kiara', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Wirausaha', 'Haidar Hendri Setyawan', 'Tari', 6, 19, 'Indonesia\r\n'),
+('1321321321321325', '1321321321321320', 'Julio', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Haidar Hendri Setyawan', 'Tari', 6, 19, 'Indonesia\r\n'),
+('1345678910111214', '1345678910111213', 'Aditya', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Wirausaha', 'Bagus', 'Fitri', 1, 2, 'Indonesia\r\n'),
+('1345678910111215', '1345678910111213', 'Fienka', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana III', 'Wirausaha', 'Rio', 'Farida', 1, 2, 'Indonesia\r\n'),
+('1345678910111216', '1345678910111213', 'Gita', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Aditya', 'Fienka', 1, 2, 'Indonesia\r\n'),
+('1345678910111217', '1345678910111213', 'Pelangi', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Aditya', 'Fienka', 1, 2, 'Indonesia\r\n'),
+('1345678910111218', '1345678910111213', 'Putri', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SD', 'Pelajar', 'Aditya', 'Fienka', 1, 2, 'Indonesia\r\n'),
+('1456789101112132', '1456789101112131', 'Kharisma', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Polisi', 'Rendi', 'Dinda', 3, 4, 'Indonesia\r\n'),
+('1456789101112133', '1456789101112131', 'Salsabila', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana III', 'Guru', 'Fajar', 'Intan', 3, 4, 'Indonesia\r\n'),
+('1456789101112134', '1456789101112131', 'Nugroho', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana III', 'TNI', 'Kharisma', 'Salsabila', 3, 4, 'Indonesia\r\n'),
+('1456789101112135', '1456789101112131', 'Abhi', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana II', 'Juru Masak', 'Kharisma', 'Salsabila', 3, 4, 'Indonesia\r\n'),
+('1456789101112136', '1456789101112131', 'Fauzan', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Wirausaha', 'Kharisma', 'Salsabila', 3, 4, 'Indonesia\r\n'),
+('1567891011121315', '1567891011121314', 'Wicaksana', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Pensiunan Polisi', 'Beryl', 'Disa', 5, 6, 'Indonesia\r\n'),
+('1567891011121316', '1567891011121314', 'Rahma', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'SMA/SMK', 'Ibu Rumah Tangga', 'Dio', 'Delisa', 5, 6, 'Indonesia\r\n'),
+('1567891011121317', '1567891011121314', 'Ariq', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana III', 'PNS', 'Wicaksana', 'Rahma', 5, 6, 'Indonesia\r\n'),
+('1567891011121318', '1567891011121314', 'Rizky', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana III', 'PNS', 'Wicaksana', 'Rahma', 5, 6, 'Indonesia\r\n'),
+('1567891011121319', '1567891011121314', 'Dilla', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana II', 'PNS', 'Wicaksana', 'Rahma', 5, 6, 'Indonesia\r\n'),
+('1678910121314152', '1678910121314151', 'Aditya Kharisma', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Pengusaha', 'Rino', 'Farah', 7, 8, 'Indonesia\r\n'),
+('1678910121314153', '1678910121314151', 'Saras', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana II', 'Pengusaha', 'Yudo', 'Shelly', 7, 8, 'Indonesia\r\n'),
+('1678910121314154', '1678910121314151', 'Natalia', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Aditya Kharisma', 'Saras', 7, 8, 'Indonesia\r\n'),
+('1678910121314155', '1678910121314151', 'Riana', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Aditya Kharisma', 'Saras', 7, 8, 'Indonesia\r\n'),
+('1678910121314156', '1678910121314151', 'Yoga', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMP', 'Pelajar/Mahasiswa', 'Aditya Kharisma', 'Saras', 7, 8, 'Indonesia\r\n'),
+('1789101112131416', '1789101112131415', 'Muhammad Alif', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Karyawan Swasta', 'Marco', 'Sarah', 9, 10, 'Indonesia\r\n'),
+('1789101112131417', '1789101112131415', 'Yudith', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana III', 'Wirausaha', 'Caesar', 'Nadya', 9, 10, 'Indonesia\r\n'),
+('1789101112131418', '1789101112131415', 'Balqis', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Karyawan Swasta', 'Muhammad Alif', 'Yudith', 9, 10, 'Indonesia\r\n'),
+('1789101112131419', '1789101112131415', 'Sabhika', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Muhammad Alif', 'Yudith', 9, 10, 'Indonesia\r\n'),
+('1789101112131420', '1789101112131415', 'Putra', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Muhammad Alif', 'Yudith', 9, 10, 'Indonesia\r\n'),
+('1891011121314152', '1891011121314151', 'Alif Wisnu', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'PNS', 'Ivander', 'Tania', 11, 12, 'Indonesia\r\n'),
+('1891011121314153', '1891011121314151', 'Lina', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'SMA/SMK', 'Ibu Rumah Tangga', 'Bara', 'Astrid', 11, 12, 'Indonesia\r\n'),
+('1891011121314154', '1891011121314151', 'Namira', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana II', 'Dokter', 'Alif Wisnu', 'Lina', 11, 12, 'Indonesia\r\n'),
+('1891011121314155', '1891011121314151', 'Juna', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Wirausaha', 'Alif Wisnu', 'Lina', 11, 12, 'Indonesia\r\n'),
+('1891011121314156', '1891011121314151', 'Hani', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Alif Wisnu', 'Lina', 11, 12, 'Indonesia\r\n'),
+('1910111213141517', '1910111213141516', 'Muhammad Wisnu', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Kepala Keluarga', 'Sarjana III', 'Dokter', 'Wijaya', 'Lista', 13, 14, 'Indonesia\r\n'),
+('1910111213141518', '1910111213141516', 'Rachel', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Kawin', 'Ibu', 'Sarjana III', 'Dokter', 'Kusuma', 'Lusi', 13, 14, 'Indonesia\r\n'),
+('1910111213141519', '1910111213141516', 'Dwi', 'L', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'Sarjana I', 'Dokter', 'Muhammad Wisnu', 'Rachel', 13, 14, 'Indonesia\r\n'),
+('1910111213141520', '1910111213141516', 'Carissa', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SMA/SMK', 'Pelajar/Mahasiswa', 'Muhammad Wisnu', 'Rachel', 13, 14, 'Indonesia\r\n'),
+('1910111213141521', '1910111213141516', 'Vivi', 'P', '3310', '1998-05-26', 'A', 'Islam', 'Belum Kawin', 'Anak', 'SD', 'Pelajar', 'Muhammad Wisnu', 'Rachel', 13, 14, 'Indonesia'),
+('3243242342342342', '1321212313123200', 'HHS', 'L', '3372', '2018-06-11', 'A', 'Kong Hu Cu', 'Belum Kawin', 'Istri', 'Strata III', 'Pelajar / Mahasiswa', 'Haidar', 'Setywan', 3, 1, 'Indonesia');
 
 -- --------------------------------------------------------
 
@@ -649,9 +707,17 @@ CREATE TABLE `kartu_keluarga` (
 --
 
 INSERT INTO `kartu_keluarga` (`no_kk`, `id_provinsi`, `id_kabupaten`, `id_kecamatan`, `id_kelurahan`, `rt`, `rw`, `nama_kepala_keluarga`, `alamat`, `kode_pos`) VALUES
-('11212121212', '33', '3372', '337201', '3372011007', '12', '22', 'Setyawan', 'Jalan Honggowongso No.94', '57149'),
-('1313131313', '33', '3372', '337203', '3372031002', '06', '19', 'Haidar Hendri Setyawan', 'Kyai Mojo', '57191'),
-('14141414', '33', '3311', '331112', '3311122006', '06', '22', 'Hendri Setyawan', 'Griya Sanggrahan Indah 3 C-11', '57161');
+('1234567890123456', '33', '3313', '331311', '3313112003', '06', '22', 'Setyawan', 'Griya Sanggrahan Indah 3 C-11', '57149'),
+('1234567891011120', '33', '3372', '337201', '3372011007', '12', '22', 'Setyawan', 'Jalan Honggowongso No.94', '57149'),
+('1321212313123200', '33', '3311', '331112', '3311122006', '6', '22', 'Hendri Setyawan', 'Griya Sanggrahan Indah 3 C-11', '57161'),
+('1321321321321320', '33', '3372', '337203', '3372031002', '6', '19', 'Haidar Hendri Setyawan', 'Kyai Mojo Songo', '57191'),
+('1345678910111213', '33', '3372', '337203', '3372031002', '1', '2', 'Aditya', 'Slamet Riyadi No. 100', '57192'),
+('1456789101112131', '33', '3372', '337203', '3372031002', '3', '4', 'Kharisma', 'Adi Sucipto No. 20', '57193'),
+('1567891011121314', '33', '3372', '337203', '3372031002', '5', '6', 'Wicaksana', 'Surya No. 1', '57194'),
+('1678910121314151', '33', '3372', '337203', '3372031002', '7', '8', 'Aditya Kharisma', 'Kabut No. 3', '57195'),
+('1789101112131415', '33', '3372', '337203', '3372031002', '9', '10', 'Muhammad Alif', 'Kartika No. 4', '57196'),
+('1891011121314151', '33', '3372', '337203', '3372031002', '11', '12', 'Alif Wisnu', 'Ngoresan No. 5', '57197'),
+('1910111213141516', '33', '3372', '337203', '3372031002', '13', '14', 'Muhammad Wisnu', 'Adi Soemarmo No. 7', '57198');
 
 -- --------------------------------------------------------
 
@@ -90530,14 +90596,16 @@ ALTER TABLE `detail_anggota_keluarga`
 --
 ALTER TABLE `event_kematian`
   ADD PRIMARY KEY (`NIK`),
-  ADD KEY `NIK` (`NIK`);
+  ADD KEY `NIK` (`NIK`),
+  ADD KEY `NIK_2` (`NIK`);
 
 --
 -- Indexes for table `event_mutasi_keluar`
 --
 ALTER TABLE `event_mutasi_keluar`
   ADD PRIMARY KEY (`NIK`),
-  ADD KEY `NIK` (`NIK`);
+  ADD KEY `NIK` (`NIK`),
+  ADD KEY `id123` (`id_kelurahan_baru`);
 
 --
 -- Indexes for table `event_mutasi_masuk`
@@ -90642,19 +90710,19 @@ ALTER TABLE `user_warga`
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id_surat` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_surat` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `surat_warga`
 --
 ALTER TABLE `surat_warga`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tagihan_warga`
 --
 ALTER TABLE `tagihan_warga`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -90682,14 +90750,14 @@ ALTER TABLE `event_kematian`
 -- Constraints for table `event_mutasi_keluar`
 --
 ALTER TABLE `event_mutasi_keluar`
+  ADD CONSTRAINT `id123` FOREIGN KEY (`id_kelurahan_baru`) REFERENCES `kelurahan` (`id_kelurahan`),
   ADD CONSTRAINT `nik123` FOREIGN KEY (`NIK`) REFERENCES `detail_anggota_keluarga` (`nik`);
 
 --
 -- Constraints for table `event_mutasi_masuk`
 --
 ALTER TABLE `event_mutasi_masuk`
-  ADD CONSTRAINT `123a` FOREIGN KEY (`id_kelurahan_lama`) REFERENCES `kelurahan` (`id_kelurahan`),
-  ADD CONSTRAINT `123b` FOREIGN KEY (`NIK`) REFERENCES `detail_anggota_keluarga` (`nik`);
+  ADD CONSTRAINT `123a` FOREIGN KEY (`id_kelurahan_lama`) REFERENCES `kelurahan` (`id_kelurahan`);
 
 --
 -- Constraints for table `kabupaten`
